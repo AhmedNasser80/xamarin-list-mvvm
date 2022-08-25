@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lists.View.seleceted">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="WhiteSmoke">
+            <StackLayout Margin="10,20,0,10">
+                <Label x:Name="CaffName" TextColor="Black" FontSize="30" FontAttributes="Bold" ></Label>
+                <Label x:Name="CaffDesc" TextColor="Gray"></Label>
+            </StackLayout>
+           
+            <Image x:Name="CaffImage" ></Image>
+            <Label x:Name="CaffDetail" TextColor="SlateGray" FontSize="15" Margin="10,10,5,10"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

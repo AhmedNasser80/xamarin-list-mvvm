@@ -1,0 +1,16 @@
+E:\Work\Link Development\Lists\Lists\Lists\bin\Debug\netstandard2.0\Lists.deps.json
+E:\Work\Link Development\Lists\Lists\Lists\bin\Debug\netstandard2.0\Lists.dll
+E:\Work\Link Development\Lists\Lists\Lists\bin\Debug\netstandard2.0\Lists.pdb
+E:\Work\Link Development\Lists\Lists\Lists\obj\Debug\netstandard2.0\Lists.csproj.AssemblyReference.cache
+E:\Work\Link Development\Lists\Lists\Lists\obj\Debug\netstandard2.0\Lists.GeneratedMSBuildEditorConfig.editorconfig
+E:\Work\Link Development\Lists\Lists\Lists\obj\Debug\netstandard2.0\App.xaml.g.cs
+E:\Work\Link Development\Lists\Lists\Lists\obj\Debug\netstandard2.0\View\LView.xaml.g.cs
+E:\Work\Link Development\Lists\Lists\Lists\obj\Debug\netstandard2.0\Lists.AssemblyInfoInputs.cache
+E:\Work\Link Development\Lists\Lists\Lists\obj\Debug\netstandard2.0\Lists.AssemblyInfo.cs
+E:\Work\Link Development\Lists\Lists\Lists\obj\Debug\netstandard2.0\Lists.csproj.CoreCompileInputs.cache
+E:\Work\Link Development\Lists\Lists\Lists\obj\Debug\netstandard2.0\XamlC.stamp
+E:\Work\Link Development\Lists\Lists\Lists\obj\Debug\netstandard2.0\Lists.dll
+E:\Work\Link Development\Lists\Lists\Lists\obj\Debug\netstandard2.0\refint\Lists.dll
+E:\Work\Link Development\Lists\Lists\Lists\obj\Debug\netstandard2.0\Lists.pdb
+E:\Work\Link Development\Lists\Lists\Lists\obj\Debug\netstandard2.0\ref\Lists.dll
+E:\Work\Link Development\Lists\Lists\Lists\obj\Debug\netstandard2.0\View\seleceted.xaml.g.cs
