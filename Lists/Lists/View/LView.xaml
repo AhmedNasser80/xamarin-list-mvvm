@@ -1,48 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Lists.ViewModel"
              x:Class="Lists.View.LView">
+    <ContentPage.BindingContext>
+        <viewmodel:ProductViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="Hot">
+                <ViewCell>
+                    <Frame BackgroundColor="White" Margin="10,10,10,5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition  />
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+                            <ContentView Grid.Column="0">
+                                <Image Source="{Binding image}" WidthRequest="50" HeightRequest="80"/>
+                            </ContentView>
+                            <ContentView Grid.Column="1">
+                                <StackLayout Margin="10,0,0,0">
+                                    <Label Text="{Binding Name}" TextColor="Black" FontSize="20" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding Description}" TextColor="Gray" FontSize="12" ></Label>
+                                    <Label Text="{Binding Quantity}" TextColor="#3AB4F2" FontSize="25" HorizontalOptions="End"></Label>
+                                </StackLayout>
+
+                            </ContentView>
+
+
+                        </Grid>
+                    </Frame>
+
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="Cold">
+                <ViewCell>
+                    <Frame BackgroundColor="Black" Margin="10,10,10,5">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition  />
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+                            <ContentView Grid.Column="0">
+                                <Image Source="{Binding image}" WidthRequest="50" HeightRequest="80"/>
+                            </ContentView>
+                            <ContentView Grid.Column="1">
+                                <StackLayout Margin="10,0,0,0">
+                                    <Label Text="{Binding Name}" TextColor="Black" FontSize="20" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding Description}" TextColor="Gray" FontSize="12" ></Label>
+                                    <Label Text="{Binding Quantity}" TextColor="#3AB4F2" FontSize="25" HorizontalOptions="End"></Label>
+                                </StackLayout>
+
+                            </ContentView>
+
+
+                        </Grid>
+                    </Frame>
+
+                </ViewCell>
+            </DataTemplate>
+            <viewmodel:CoffeTypeSelector x:Key="CoffeSelector"
+                                         Hot="{StaticResource Hot}"
+                                         Cold="{StaticResource Cold}"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             
-            <ListView BackgroundColor="WhiteSmoke" x:Name="listView" HasUnevenRows="True" ItemSelected="listView_ItemSelected">
+            <ListView BackgroundColor="WhiteSmoke" x:Name="listView" ItemsSource="{Binding Products}" HasUnevenRows="True" ItemSelected="listView_ItemSelected" ItemTemplate="{StaticResource CoffeSelector}">
                 <ListView.Header>
                     <StackLayout>
                         <Label Text="Coffe Menu" FontSize="30" BackgroundColor="#3AB4F2"  TextColor="White" FontAttributes="Bold" Padding="15,10,0,10"></Label>
                         <SearchBar TextChanged="SearchBar_TextChanged"  BackgroundColor="White" Margin="10,10"></SearchBar>
                     </StackLayout>
                 </ListView.Header>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Frame BackgroundColor="White" Margin="10,10,10,5">
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition  />
-                                        <ColumnDefinition Width="200"/>
-                                    </Grid.ColumnDefinitions>
-                                    <ContentView Grid.Column="0">
-                                        <Image Source="{Binding image}" WidthRequest="50" HeightRequest="80"/>
-                                    </ContentView>
-                                    <ContentView Grid.Column="1">
-                                        <StackLayout Margin="10,0,0,0">
-                                            <Label Text="{Binding Name}" TextColor="Black" FontSize="20" FontAttributes="Bold"></Label>
-                                            <Label Text="{Binding Description}" TextColor="Gray" FontSize="12" ></Label>
-                                            <Label Text="{Binding Quantity}" TextColor="#3AB4F2" FontSize="25" HorizontalOptions="End"></Label>
-                                        </StackLayout>
-                                        
-                                    </ContentView>
-
-
-                                </Grid>
-                            </Frame>
-                            
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
         
