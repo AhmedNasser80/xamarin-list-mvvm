@@ -2,12 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:Lists.ViewModel"
+            xmlns:custom="clr-namespace:Lists.Converter"
              x:Class="Lists.View.LView">
     <ContentPage.BindingContext>
         <viewmodel:ProductViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Resources>
         <ResourceDictionary>
+            <custom:LessTenConverter x:Key="numCon" />
             <DataTemplate x:Key="Hot">
                 <ViewCell>
                     <Frame BackgroundColor="White" Margin="10,10,10,5">
@@ -26,7 +28,7 @@
                                 <StackLayout Margin="10,0,0,0">
                                     <Label Text="{Binding Name}" TextColor="Black" FontSize="20" FontAttributes="Bold"></Label>
                                     <Label Text="{Binding Description}" TextColor="Gray" FontSize="12" ></Label>
-                                    <Label Text="{Binding Quantity}" TextColor="#3AB4F2" FontSize="25" HorizontalOptions="End"></Label>
+                                    <Label Text="{Binding Quantity,Converter={StaticResource numCon}}" FontSize="25" HorizontalOptions="End"></Label>
                                 </StackLayout>
 
                             </ContentView>
@@ -70,6 +72,7 @@
             <viewmodel:CoffeTypeSelector x:Key="CoffeSelector"
                                          Hot="{StaticResource Hot}"
                                          Cold="{StaticResource Cold}"/>
+            
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
